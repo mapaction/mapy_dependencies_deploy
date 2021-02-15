@@ -33,7 +33,8 @@ jobs:
     - ls -l
     deploy:
       provider: pypi
-      all_branches: true
+      on:
+        branch: master
       username: asmith_mapaction
       distributions: "sdist"
       skip_existing: true
