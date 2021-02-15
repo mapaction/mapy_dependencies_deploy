@@ -4,7 +4,8 @@ dist: xenial
 
 stages:
 - test
-- name: deploy
+- name: deploy27
+- name: deploy36
   
 install: skip
 script:
@@ -23,7 +24,9 @@ jobs:
   - stage: deploy27
     python: 2.7
     script:
+    - cd $TRAVIS_BUILD_DIR
     - cd $(bash ./deploy_dir.sh)
+    - pwd
     - cp ../setup.py .
     - cp -r ../py2.py3-none-any .
     - ls -l
