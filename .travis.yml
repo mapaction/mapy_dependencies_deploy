@@ -39,7 +39,7 @@ jobs:
     - cd $TRAVIS_BUILD_DIR
     - cd mapy_dependencies_py36
     - pwd
-    - ./copy_common_files.sh
+    - ../copy_common_files.sh
     - ls -l
     deploy:
       provider: pypi
