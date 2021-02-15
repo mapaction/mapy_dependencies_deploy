@@ -26,7 +26,7 @@ jobs:
     script:
     - echo $TRAVIS_BUILD_DIR
     - cd $TRAVIS_BUILD_DIR
-    - cd $(bash ./deploy_dir.sh)
+    - cd mapy_dependencies_py27
     - pwd
     - cp ../setup.py .
     - cp -r ../py2.py3-none-any .
@@ -43,7 +43,10 @@ jobs:
   - stage: deploy36
     python: 3.6
     script:
-    - cd $(bash ./deploy_dir.sh)
+    - echo $TRAVIS_BUILD_DIR
+    - cd $TRAVIS_BUILD_DIR
+    - cd mapy_dependencies_py36
+    - pwd
     - cp ../setup.py .
     - cp -r ../py2.py3-none-any .
     - ls -l
