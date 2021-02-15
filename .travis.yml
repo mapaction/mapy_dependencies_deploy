@@ -24,6 +24,7 @@ jobs:
   - stage: deploy27
     python: 2.7
     script:
+    - echo $TRAVIS_BUILD_DIR
     - cd $TRAVIS_BUILD_DIR
     - cd $(bash ./deploy_dir.sh)
     - pwd
