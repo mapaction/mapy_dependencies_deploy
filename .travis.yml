@@ -5,6 +5,9 @@ stages:
 - test
 - name: deploy27
 - name: deploy36
+- name: deploy37
+- name: deploy38
+- name: deploy39
 install: skip
 script:
 - python -c "import sys; print('Python verion ={}, sys.platform={}, is 64bit? = {}'.format(sys.version_info.major,
@@ -39,6 +42,63 @@ jobs:
     - echo $TRAVIS_BUILD_DIR
     - cd $TRAVIS_BUILD_DIR
     - cd mapy_dependencies_py36
+    - pwd
+    - bash ../copy_common_files.sh
+    - ls -l
+    deploy:
+      provider: pypi
+      on:
+        branch: master
+      username: __token__
+      password:
+        secure: dDjwuEbT1CgtdCYfIch3xuZq2wraWdWh2bbsHPlp+ppuDV2bR6/V5/tYZ/vdCwTKzdpsG0I1rdZy5Pe2NlqU7e3OT9QC7lyINJtzGiAPTUc7tE5nWgmpcUzEP4VBMuhsuEu9o+g9Zige+AbZphgo6C5E7LTT5zInS+hLfJRcxa8ERax/031CMIHefQLfte3alosZNEPHZ6ghpi1XtzJBgW/p2epMnVDkh8tuVbKnYZfbqlgYyvLmkKlcUBfSD14TqzUq7yRGMoK3Mupk/nf41CJGgWqq7xLzX/OQf3TGTdyW16DWIuYHgcByX/XMGYvfVa89vYJbN+ckEUoQvK5XMgy5Kf+AcyBccXLEIAZVFIOQ9S3Y6mKLsP2QZ9wzSHE/hVDk59gZtZDcdenyIDzvq1Rtffahu6dPCJ1onIu5rA0hLT7Parxf1Q/x0GheIjVUenTkPMZg/vi/9ZdPXr8tE8Rcoa+086dPtR1XCGp5EqqdkbTnX4TUPXi/vZiMm8p59FmsKX6T2vuqftDUTUMxlCyvtVKOKPZpgVfzu4lab7n1Jbsp2OuLTI4lutnwEGod32GISC9x0mihLl1KBDxW1lsDOZaFfIhl1UIoDiI2M0psV23wS0SZBUPPr1oBl3hFVnxYccmWcQ5WeEtLWCCwi7kFdkd6GtVxhVoQjBcL4Uc=
+      distributions: sdist
+      skip_existing: true
+      skip_cleanup: true
+  - stage: deploy37
+    python: 3.6
+    script:
+    - echo $TRAVIS_BUILD_DIR
+    - cd $TRAVIS_BUILD_DIR
+    - cd mapy_dependencies_py37
+    - pwd
+    - bash ../copy_common_files.sh
+    - ls -l
+    deploy:
+      provider: pypi
+      on:
+        branch: master
+      username: __token__
+      password:
+        secure: dDjwuEbT1CgtdCYfIch3xuZq2wraWdWh2bbsHPlp+ppuDV2bR6/V5/tYZ/vdCwTKzdpsG0I1rdZy5Pe2NlqU7e3OT9QC7lyINJtzGiAPTUc7tE5nWgmpcUzEP4VBMuhsuEu9o+g9Zige+AbZphgo6C5E7LTT5zInS+hLfJRcxa8ERax/031CMIHefQLfte3alosZNEPHZ6ghpi1XtzJBgW/p2epMnVDkh8tuVbKnYZfbqlgYyvLmkKlcUBfSD14TqzUq7yRGMoK3Mupk/nf41CJGgWqq7xLzX/OQf3TGTdyW16DWIuYHgcByX/XMGYvfVa89vYJbN+ckEUoQvK5XMgy5Kf+AcyBccXLEIAZVFIOQ9S3Y6mKLsP2QZ9wzSHE/hVDk59gZtZDcdenyIDzvq1Rtffahu6dPCJ1onIu5rA0hLT7Parxf1Q/x0GheIjVUenTkPMZg/vi/9ZdPXr8tE8Rcoa+086dPtR1XCGp5EqqdkbTnX4TUPXi/vZiMm8p59FmsKX6T2vuqftDUTUMxlCyvtVKOKPZpgVfzu4lab7n1Jbsp2OuLTI4lutnwEGod32GISC9x0mihLl1KBDxW1lsDOZaFfIhl1UIoDiI2M0psV23wS0SZBUPPr1oBl3hFVnxYccmWcQ5WeEtLWCCwi7kFdkd6GtVxhVoQjBcL4Uc=
+      distributions: sdist
+      skip_existing: true
+      skip_cleanup: true
+  - stage: deploy38
+    python: 3.6
+    script:
+    - echo $TRAVIS_BUILD_DIR
+    - cd $TRAVIS_BUILD_DIR
+    - cd mapy_dependencies_py38
+    - pwd
+    - bash ../copy_common_files.sh
+    - ls -l
+    deploy:
+      provider: pypi
+      on:
+        branch: master
+      username: __token__
+      password:
+        secure: dDjwuEbT1CgtdCYfIch3xuZq2wraWdWh2bbsHPlp+ppuDV2bR6/V5/tYZ/vdCwTKzdpsG0I1rdZy5Pe2NlqU7e3OT9QC7lyINJtzGiAPTUc7tE5nWgmpcUzEP4VBMuhsuEu9o+g9Zige+AbZphgo6C5E7LTT5zInS+hLfJRcxa8ERax/031CMIHefQLfte3alosZNEPHZ6ghpi1XtzJBgW/p2epMnVDkh8tuVbKnYZfbqlgYyvLmkKlcUBfSD14TqzUq7yRGMoK3Mupk/nf41CJGgWqq7xLzX/OQf3TGTdyW16DWIuYHgcByX/XMGYvfVa89vYJbN+ckEUoQvK5XMgy5Kf+AcyBccXLEIAZVFIOQ9S3Y6mKLsP2QZ9wzSHE/hVDk59gZtZDcdenyIDzvq1Rtffahu6dPCJ1onIu5rA0hLT7Parxf1Q/x0GheIjVUenTkPMZg/vi/9ZdPXr8tE8Rcoa+086dPtR1XCGp5EqqdkbTnX4TUPXi/vZiMm8p59FmsKX6T2vuqftDUTUMxlCyvtVKOKPZpgVfzu4lab7n1Jbsp2OuLTI4lutnwEGod32GISC9x0mihLl1KBDxW1lsDOZaFfIhl1UIoDiI2M0psV23wS0SZBUPPr1oBl3hFVnxYccmWcQ5WeEtLWCCwi7kFdkd6GtVxhVoQjBcL4Uc=
+      distributions: sdist
+      skip_existing: true
+      skip_cleanup: true
+  - stage: deploy39
+    python: 3.6
+    script:
+    - echo $TRAVIS_BUILD_DIR
+    - cd $TRAVIS_BUILD_DIR
+    - cd mapy_dependencies_py39
     - pwd
     - bash ../copy_common_files.sh
     - ls -l
