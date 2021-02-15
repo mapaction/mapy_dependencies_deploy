@@ -29,7 +29,7 @@ jobs:
     script:
     - cd $(bash ./deploy_dir.sh)
     - cp ../setup.py .
-    - cp ../py2.py3-none-any .
+    - cp -r ../py2.py3-none-any .
     - ls -l
     deploy:
       provider: pypi
