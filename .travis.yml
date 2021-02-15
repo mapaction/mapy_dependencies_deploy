@@ -20,12 +20,7 @@ jobs:
     - cd $TRAVIS_BUILD_DIR
     - cd mapy_dependencies_py27
     - pwd
-    - cp ../setup.py .
-    - cp ../README.md .
-    - cp ../requirements.txt .
-    - cp ../MANIFEST.in .
-    - cp ../__init__.py .
-    - cp -r ../py2.py3-none-any .
+    - ./copy_common_files.sh
     - ls -l
     deploy:
       provider: pypi
@@ -44,8 +39,7 @@ jobs:
     - cd $TRAVIS_BUILD_DIR
     - cd mapy_dependencies_py36
     - pwd
-    - cp ../setup.py .
-    - cp -r ../py2.py3-none-any .
+    - ./copy_common_files.sh
     - ls -l
     deploy:
       provider: pypi
