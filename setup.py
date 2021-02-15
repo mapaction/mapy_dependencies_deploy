@@ -43,7 +43,7 @@ def _get_classifiers_strs():
         "Operating System :: Microsoft :: Windows"
     ]
     
-    if pkg_name[-2:] == "27"):
+    if pkg_name[-2:] == "27":
         classifiers.append("Programming Language :: Python :: 2.7")
     else:
         classifiers.append("Programming Language :: Python :: 3")
