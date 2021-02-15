@@ -19,17 +19,25 @@ script:
 jobs:
   include:
   - python: 2.7
-  - python: 3.6
-  - python: 3.7
-  - python: 3.8
-  - python: 3.9
 
-  - stage: deploy
+  - stage: deploy27
     python: 2.7
-  - python: 3.6
-  - python: 3.7
-  - python: 3.8
-  - python: 3.9    
+    script:
+    - cd $(bash ./deploy_dir.sh)
+    - cp ../setup.py .
+    - cp -r ../py2.py3-none-any .
+    - ls -l
+    deploy:
+      provider: pypi
+      on:
+        branch: master
+      username: asmith_mapaction
+      distributions: "sdist"
+      skip_existing: true
+      cleanup: false
+
+  - stage: deploy36
+    python: 3.6
     script:
     - cd $(bash ./deploy_dir.sh)
     - cp ../setup.py .
