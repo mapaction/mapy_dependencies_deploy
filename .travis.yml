@@ -5,11 +5,12 @@ dist: xenial
 stages:
 - test
 - name: deploy
-
+  
 install: skip
 script:
 - python -c "import sys; print('Python verion ={}, sys.platform={}, is 64bit? = {}'.format(sys.version_info.major,
   sys.platform, (sys.maxsize > 2**32)))"
+- chmod ugo+x ./deploy_dir.sh
 # - cd $(bash deploy_dir.sh)
 # - cp ../setup.py .
 # - cp ../py2.py3-none-any .
@@ -24,14 +25,16 @@ jobs:
   - python: 3.9
 
   - stage: deploy
+    python: 2.7
     script:
-    - cd $(bash deploy_dir.sh)
+    - cd $(bash ./deploy_dir.sh)
     - cp ../setup.py .
     - cp ../py2.py3-none-any .
     - ls -l
     deploy:
       provider: pypi
+      all_branches: true
       username: asmith_mapaction
       distributions: "sdist"
       skip_existing: true
-      skip_cleanup: true
+      cleanup: false
