@@ -10,6 +10,7 @@ script:
 - python -c "import sys; print('Python verion ={}, sys.platform={}, is 64bit? = {}'.format(sys.version_info.major,
   sys.platform, (sys.maxsize > 2**32)))"
 - chmod ugo+x ./deploy_dir.sh
+- chmod ugo+x ./copy_common_files.sh
 jobs:
   include:
   - python: 3.6
