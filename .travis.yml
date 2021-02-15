@@ -1,6 +1,20 @@
 language: python
 os: linux
 dist: xenial
+
+stages:
+- test
+- name: deploy
+
+install: skip
+script:
+- python -c "import sys; print('Python verion ={}, sys.platform={}, is 64bit? = {}'.format(sys.version_info.major,
+  sys.platform, (sys.maxsize > 2**32)))"
+# - cd $(bash deploy_dir.sh)
+# - cp ../setup.py .
+# - cp ../py2.py3-none-any .
+# - ls -l
+
 jobs:
   include:
   - python: 2.7
@@ -9,18 +23,15 @@ jobs:
   - python: 3.8
   - python: 3.9
 
-install: skip
-script:
-- python -c "import sys; print('Python verion ={}, sys.platform={}, is 64bit? = {}'.format(sys.version_info.major,
-  sys.platform, (sys.maxsize > 2**32)))"
-- cd $(bash deploy_dir.sh)
-- cp ../setup.py .
-- cp ../py2.py3-none-any .
-- ls -lR
-
-deploy:
-  provider: pypi
-  username: asmith_mapaction
-  distributions: "sdist"
-  skip_existing: true
-  skip_cleanup: true
+  - stage: deploy
+    script:
+    - cd $(bash deploy_dir.sh)
+    - cp ../setup.py .
+    - cp ../py2.py3-none-any .
+    - ls -l
+    deploy:
+      provider: pypi
+      username: asmith_mapaction
+      distributions: "sdist"
+      skip_existing: true
+      skip_cleanup: true
