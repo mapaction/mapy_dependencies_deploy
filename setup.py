@@ -1,3 +1,4 @@
+import re
 import subprocess
 import sys
 from setuptools import setup, find_packages
