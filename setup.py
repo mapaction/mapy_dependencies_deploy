@@ -10,8 +10,10 @@ import subprocess
 _base_version = '1.1'
 
 root_dir = path.dirname(path.abspath(__file__))
-pkg_name = path.split(root_dir)[1]
 
+temp_name = path.split(root_dir)[1]
+temp_name = re.sub(r'_', '-', temp_name.lower())
+pkg_name = re.search('mapy[-_]dependencies[-_]py\d\d', temp_name)[0]
 
 def _get_platform_str():
     result = None
