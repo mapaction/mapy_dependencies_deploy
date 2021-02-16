@@ -58,7 +58,7 @@ def get_wheel_paths():
 
     # The order these packages are intalled  matters, which is why
     # this does not just do something like
-    # `glob.glob('{}/dependancy_wheels/*.whl'.format(root_dir))`
+    # `glob.glob('{}/{}/*.whl'.format(root_dir, platform_str))`
 
     if (sys.version_info.major == 2):
         wheel_list = [
@@ -81,8 +81,7 @@ def get_wheel_paths():
     # `install_requires` parameter, because of the dependancy on other wheel files.
     wheel_list.append(('py2.py3-none-any', 'geopandas-0.6.2-py2.py3-none-any.whl'))
 
-    return [path.join(root_dir, 'dependency_wheels', dir_name, wheel_name) for dir_name, wheel_name in wheel_list]
-
+    return [path.join(root_dir, dir_name, wheel_name) for dir_name, wheel_name in wheel_list]
 
 def install_from_wheels(command_subclass):
     """A decorator for classes subclassing one of the setuptools commands.
