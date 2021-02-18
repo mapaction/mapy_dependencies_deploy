@@ -132,9 +132,10 @@ def readme():
 # This uses method 4 on this list combined with other methods.
 def _get_version_number():
     travis_build = environ.get('TRAVIS_BUILD_NUMBER')
+    repo_slug =  environ.get('TRAVIS_REPO_SLUG').lower().strip()
     travis_tag = environ.get('TRAVIS_TAG')
 
-    if travis_build:
+    if travis_build and (repo_slug == 'mapaction/mapy_dependencies_deploy'):
         if travis_tag:
             version = travis_tag
         else:
