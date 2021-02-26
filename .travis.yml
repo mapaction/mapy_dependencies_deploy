@@ -29,7 +29,8 @@ jobs:
     deploy:
       provider: pypi
       on:
-        branch: master
+        all_branches: true
+        condition: ${TRAVIS_BRANCH,,} =~ ^(master|${TRAVIS_TAG,,})$
       username: __token__
       password:
         secure: dDjwuEbT1CgtdCYfIch3xuZq2wraWdWh2bbsHPlp+ppuDV2bR6/V5/tYZ/vdCwTKzdpsG0I1rdZy5Pe2NlqU7e3OT9QC7lyINJtzGiAPTUc7tE5nWgmpcUzEP4VBMuhsuEu9o+g9Zige+AbZphgo6C5E7LTT5zInS+hLfJRcxa8ERax/031CMIHefQLfte3alosZNEPHZ6ghpi1XtzJBgW/p2epMnVDkh8tuVbKnYZfbqlgYyvLmkKlcUBfSD14TqzUq7yRGMoK3Mupk/nf41CJGgWqq7xLzX/OQf3TGTdyW16DWIuYHgcByX/XMGYvfVa89vYJbN+ckEUoQvK5XMgy5Kf+AcyBccXLEIAZVFIOQ9S3Y6mKLsP2QZ9wzSHE/hVDk59gZtZDcdenyIDzvq1Rtffahu6dPCJ1onIu5rA0hLT7Parxf1Q/x0GheIjVUenTkPMZg/vi/9ZdPXr8tE8Rcoa+086dPtR1XCGp5EqqdkbTnX4TUPXi/vZiMm8p59FmsKX6T2vuqftDUTUMxlCyvtVKOKPZpgVfzu4lab7n1Jbsp2OuLTI4lutnwEGod32GISC9x0mihLl1KBDxW1lsDOZaFfIhl1UIoDiI2M0psV23wS0SZBUPPr1oBl3hFVnxYccmWcQ5WeEtLWCCwi7kFdkd6GtVxhVoQjBcL4Uc=
@@ -48,7 +49,8 @@ jobs:
     deploy:
       provider: pypi
       on:
-        branch: master
+        all_branches: true
+        condition: ${TRAVIS_BRANCH,,} =~ ^(master|${TRAVIS_TAG,,})$
       username: __token__
       password:
         secure: dDjwuEbT1CgtdCYfIch3xuZq2wraWdWh2bbsHPlp+ppuDV2bR6/V5/tYZ/vdCwTKzdpsG0I1rdZy5Pe2NlqU7e3OT9QC7lyINJtzGiAPTUc7tE5nWgmpcUzEP4VBMuhsuEu9o+g9Zige+AbZphgo6C5E7LTT5zInS+hLfJRcxa8ERax/031CMIHefQLfte3alosZNEPHZ6ghpi1XtzJBgW/p2epMnVDkh8tuVbKnYZfbqlgYyvLmkKlcUBfSD14TqzUq7yRGMoK3Mupk/nf41CJGgWqq7xLzX/OQf3TGTdyW16DWIuYHgcByX/XMGYvfVa89vYJbN+ckEUoQvK5XMgy5Kf+AcyBccXLEIAZVFIOQ9S3Y6mKLsP2QZ9wzSHE/hVDk59gZtZDcdenyIDzvq1Rtffahu6dPCJ1onIu5rA0hLT7Parxf1Q/x0GheIjVUenTkPMZg/vi/9ZdPXr8tE8Rcoa+086dPtR1XCGp5EqqdkbTnX4TUPXi/vZiMm8p59FmsKX6T2vuqftDUTUMxlCyvtVKOKPZpgVfzu4lab7n1Jbsp2OuLTI4lutnwEGod32GISC9x0mihLl1KBDxW1lsDOZaFfIhl1UIoDiI2M0psV23wS0SZBUPPr1oBl3hFVnxYccmWcQ5WeEtLWCCwi7kFdkd6GtVxhVoQjBcL4Uc=
@@ -67,7 +69,8 @@ jobs:
     deploy:
       provider: pypi
       on:
-        branch: master
+        all_branches: true
+        condition: ${TRAVIS_BRANCH,,} =~ ^(master|${TRAVIS_TAG,,})$
       username: __token__
       password:
         secure: dDjwuEbT1CgtdCYfIch3xuZq2wraWdWh2bbsHPlp+ppuDV2bR6/V5/tYZ/vdCwTKzdpsG0I1rdZy5Pe2NlqU7e3OT9QC7lyINJtzGiAPTUc7tE5nWgmpcUzEP4VBMuhsuEu9o+g9Zige+AbZphgo6C5E7LTT5zInS+hLfJRcxa8ERax/031CMIHefQLfte3alosZNEPHZ6ghpi1XtzJBgW/p2epMnVDkh8tuVbKnYZfbqlgYyvLmkKlcUBfSD14TqzUq7yRGMoK3Mupk/nf41CJGgWqq7xLzX/OQf3TGTdyW16DWIuYHgcByX/XMGYvfVa89vYJbN+ckEUoQvK5XMgy5Kf+AcyBccXLEIAZVFIOQ9S3Y6mKLsP2QZ9wzSHE/hVDk59gZtZDcdenyIDzvq1Rtffahu6dPCJ1onIu5rA0hLT7Parxf1Q/x0GheIjVUenTkPMZg/vi/9ZdPXr8tE8Rcoa+086dPtR1XCGp5EqqdkbTnX4TUPXi/vZiMm8p59FmsKX6T2vuqftDUTUMxlCyvtVKOKPZpgVfzu4lab7n1Jbsp2OuLTI4lutnwEGod32GISC9x0mihLl1KBDxW1lsDOZaFfIhl1UIoDiI2M0psV23wS0SZBUPPr1oBl3hFVnxYccmWcQ5WeEtLWCCwi7kFdkd6GtVxhVoQjBcL4Uc=
@@ -86,7 +89,8 @@ jobs:
     deploy:
       provider: pypi
       on:
-        branch: master
+        all_branches: true
+        condition: ${TRAVIS_BRANCH,,} =~ ^(master|${TRAVIS_TAG,,})$
       username: __token__
       password:
         secure: dDjwuEbT1CgtdCYfIch3xuZq2wraWdWh2bbsHPlp+ppuDV2bR6/V5/tYZ/vdCwTKzdpsG0I1rdZy5Pe2NlqU7e3OT9QC7lyINJtzGiAPTUc7tE5nWgmpcUzEP4VBMuhsuEu9o+g9Zige+AbZphgo6C5E7LTT5zInS+hLfJRcxa8ERax/031CMIHefQLfte3alosZNEPHZ6ghpi1XtzJBgW/p2epMnVDkh8tuVbKnYZfbqlgYyvLmkKlcUBfSD14TqzUq7yRGMoK3Mupk/nf41CJGgWqq7xLzX/OQf3TGTdyW16DWIuYHgcByX/XMGYvfVa89vYJbN+ckEUoQvK5XMgy5Kf+AcyBccXLEIAZVFIOQ9S3Y6mKLsP2QZ9wzSHE/hVDk59gZtZDcdenyIDzvq1Rtffahu6dPCJ1onIu5rA0hLT7Parxf1Q/x0GheIjVUenTkPMZg/vi/9ZdPXr8tE8Rcoa+086dPtR1XCGp5EqqdkbTnX4TUPXi/vZiMm8p59FmsKX6T2vuqftDUTUMxlCyvtVKOKPZpgVfzu4lab7n1Jbsp2OuLTI4lutnwEGod32GISC9x0mihLl1KBDxW1lsDOZaFfIhl1UIoDiI2M0psV23wS0SZBUPPr1oBl3hFVnxYccmWcQ5WeEtLWCCwi7kFdkd6GtVxhVoQjBcL4Uc=
@@ -105,7 +109,8 @@ jobs:
     deploy:
       provider: pypi
       on:
-        branch: master
+        all_branches: true
+        condition: ${TRAVIS_BRANCH,,} =~ ^(master|${TRAVIS_TAG,,})$
       username: __token__
       password:
         secure: dDjwuEbT1CgtdCYfIch3xuZq2wraWdWh2bbsHPlp+ppuDV2bR6/V5/tYZ/vdCwTKzdpsG0I1rdZy5Pe2NlqU7e3OT9QC7lyINJtzGiAPTUc7tE5nWgmpcUzEP4VBMuhsuEu9o+g9Zige+AbZphgo6C5E7LTT5zInS+hLfJRcxa8ERax/031CMIHefQLfte3alosZNEPHZ6ghpi1XtzJBgW/p2epMnVDkh8tuVbKnYZfbqlgYyvLmkKlcUBfSD14TqzUq7yRGMoK3Mupk/nf41CJGgWqq7xLzX/OQf3TGTdyW16DWIuYHgcByX/XMGYvfVa89vYJbN+ckEUoQvK5XMgy5Kf+AcyBccXLEIAZVFIOQ9S3Y6mKLsP2QZ9wzSHE/hVDk59gZtZDcdenyIDzvq1Rtffahu6dPCJ1onIu5rA0hLT7Parxf1Q/x0GheIjVUenTkPMZg/vi/9ZdPXr8tE8Rcoa+086dPtR1XCGp5EqqdkbTnX4TUPXi/vZiMm8p59FmsKX6T2vuqftDUTUMxlCyvtVKOKPZpgVfzu4lab7n1Jbsp2OuLTI4lutnwEGod32GISC9x0mihLl1KBDxW1lsDOZaFfIhl1UIoDiI2M0psV23wS0SZBUPPr1oBl3hFVnxYccmWcQ5WeEtLWCCwi7kFdkd6GtVxhVoQjBcL4Uc=
