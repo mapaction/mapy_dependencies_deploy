@@ -68,6 +68,14 @@ def get_wheel_paths():
             (platform_str, 'Fiona-1.8.13-{}.whl'.format(platform_str)),
             (platform_str, 'Rtree-0.9.3-{}.whl'.format(platform_str))
         ]
+    elif sys.version_info.major == 3 and sys.version_info.minor == 9:
+        wheel_list = [
+            (platform_str, 'pyproj-3.3.1-{}.whl'.format(platform_str)),
+            (platform_str, 'Shapely-1.8.2-{}.whl'.format(platform_str)),
+            (platform_str, 'GDAL-3.3.3-{}.whl'.format(platform_str)),
+            (platform_str, 'Fiona-1.8.21-{}.whl'.format(platform_str)),
+            (platform_str, 'Rtree-1.0.0-{}.whl'.format(platform_str))
+        ]
     else:
         wheel_list = [
             (platform_str, 'pyproj-3.0.0.post1-{}.whl'.format(platform_str)),
