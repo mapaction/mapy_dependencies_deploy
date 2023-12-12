@@ -1,6 +1,6 @@
 language: python
 os: linux
-dist: xenial
+dist: jammy
 stages:
 - test
 - name: deploy27
@@ -16,9 +16,9 @@ script:
 - chmod ugo+x ./copy_common_files.sh
 jobs:
   include:
-  - python: 3.6
+  - python: 3.9
   - stage: deploy27
-    python: 3.6
+    python: 3.9
     script:
     - echo $TRAVIS_BUILD_DIR
     - cd $TRAVIS_BUILD_DIR
@@ -38,7 +38,7 @@ jobs:
       skip_existing: true
       skip_cleanup: true
   - stage: deploy36
-    python: 3.6
+    python: 3.9
     script:
     - echo $TRAVIS_BUILD_DIR
     - cd $TRAVIS_BUILD_DIR
@@ -58,7 +58,7 @@ jobs:
       skip_existing: true
       skip_cleanup: true
   - stage: deploy37
-    python: 3.6
+    python: 3.9
     script:
     - echo $TRAVIS_BUILD_DIR
     - cd $TRAVIS_BUILD_DIR
@@ -78,7 +78,7 @@ jobs:
       skip_existing: true
       skip_cleanup: true
   - stage: deploy38
-    python: 3.6
+    python: 3.9
     script:
     - echo $TRAVIS_BUILD_DIR
     - cd $TRAVIS_BUILD_DIR
@@ -98,7 +98,7 @@ jobs:
       skip_existing: true
       skip_cleanup: true
   - stage: deploy39
-    python: 3.6
+    python: 3.9
     script:
     - echo $TRAVIS_BUILD_DIR
     - cd $TRAVIS_BUILD_DIR
