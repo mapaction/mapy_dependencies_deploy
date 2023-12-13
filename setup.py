@@ -107,7 +107,7 @@ def install_from_wheels(command_subclass):
                 # wheel_path = path.join(root_dir, 'dependency_wheels', dir_name, wheel_name)
                 print('Installing {} from wheel file.'.format(wheel_path))
                 try:
-                    subprocess.check_call([sys.executable, '-m', 'pip', 'install', wheel_path])
+                    subprocess.check_call(['pip', 'install', wheel_path])
                     # pip_result = pip.main(['install', wheel_path])
                     # print('pip result = {}'.format(pip_result))
                 except SystemExit:
