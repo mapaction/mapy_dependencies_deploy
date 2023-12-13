@@ -1,6 +1,7 @@
 import re
 import subprocess
 import sys
+import shutil
 from setuptools import setup, find_packages
 from setuptools.command.develop import develop
 from setuptools.command.install import install
@@ -103,11 +104,13 @@ def install_from_wheels(command_subclass):
         print('Custom run() method')
 
         if sys.platform == 'win32':
+            pip_executable = shutil.which('pip')
+            print(pip_executable)
             for wheel_path in get_wheel_paths():
                 # wheel_path = path.join(root_dir, 'dependency_wheels', dir_name, wheel_name)
                 print('Installing {} from wheel file.'.format(wheel_path))
                 try:
-                    subprocess.check_call(['pip', 'install', wheel_path])
+                    subprocess.check_call([pip_executable, 'install', wheel_path])
                     # pip_result = pip.main(['install', wheel_path])
                     # print('pip result = {}'.format(pip_result))
                 except SystemExit:
