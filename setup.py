@@ -1,7 +1,6 @@
 import re
 import subprocess
 import sys
-import shutil
 from setuptools import setup, find_packages
 from setuptools.command.develop import develop
 from setuptools.command.install import install
@@ -69,13 +68,6 @@ def get_wheel_paths():
             (platform_str, 'Fiona-1.8.13-{}.whl'.format(platform_str)),
             (platform_str, 'Rtree-0.9.3-{}.whl'.format(platform_str))
         ]
-    elif sys.version_info.major == 3 and sys.version_info.minor == 9:
-        wheel_list = [
-            (platform_str, 'Shapely-1.8.2-{}.whl'.format(platform_str)),
-            (platform_str, 'GDAL-3.3.3-{}.whl'.format(platform_str)),
-            (platform_str, 'Fiona-1.8.21-{}.whl'.format(platform_str)),
-            (platform_str, 'Rtree-1.0.0-{}.whl'.format(platform_str))
-        ]
     else:
         wheel_list = [
             (platform_str, 'pyproj-3.0.0.post1-{}.whl'.format(platform_str)),
@@ -104,13 +96,11 @@ def install_from_wheels(command_subclass):
         print('Custom run() method')
 
         if sys.platform == 'win32':
-            pip_executable = shutil.which('pip')
-            print(pip_executable)
             for wheel_path in get_wheel_paths():
                 # wheel_path = path.join(root_dir, 'dependency_wheels', dir_name, wheel_name)
                 print('Installing {} from wheel file.'.format(wheel_path))
                 try:
-                    subprocess.check_call([pip_executable, 'install', wheel_path])
+                    subprocess.check_call([sys.executable, '-m', 'pip', 'install', wheel_path])
                     # pip_result = pip.main(['install', wheel_path])
                     # print('pip result = {}'.format(pip_result))
                 except SystemExit:
